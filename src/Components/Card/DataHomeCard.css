@@ -1,0 +1,22 @@
+.TotalCards{
+    display: flex;
+    margin: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.TotalCards >*{
+    margin: 10px;
+
+}
+.TotalCardContainer{
+    text-align: center;
+}
+.pagination button{
+    margin: 0 5px;
+}
+.pagination button.active{
+    background-color: green;
+}
+.noHome{
+    margin-top: 2rem;
+}

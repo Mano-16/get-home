@@ -1,0 +1,125 @@
+.loginContainer{
+    width: 50vw;
+    height: 60vh;
+    background-color: #eeeeee;
+    border-radius: 20px;
+    display: flex;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+.loginError{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 15vw;
+    height: max-content;
+    background-color: red;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 1;
+    color: #fff;
+    
+}
+.loginError .active{
+    animation: slide-dow 200ms ease-out forwards;
+}
+@keyframes slide-dow{
+    from{
+        opacity: 0;
+        transform:  translate(-50%,-3rem);
+    }
+    to{
+        opacity: 1;
+        transform: translate(-50%,0);
+    }
+}
+.loginContainer form{
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 2vw;
+    position: relative;
+}
+.loginContainer h2{
+    margin: 0;
+}
+.loginContainer form label.textLabel{
+    display: block;
+}
+.loginContainer form label.radioLabel{
+    margin-left: 2vw;
+}
+
+.loginContainer form input[type='email'],.loginContainer form input[type='password'], .loginContainer form input[type='text'], .loginContainer form button{
+    width: 90%;
+    box-sizing: border-box;
+    padding: 5px;
+    height: 5vh;
+    
+}
+.loginContainer form>:last-child{
+    position: absolute;
+    right: 1vw;
+    top: 1vw;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.loginContainer form input:focus{
+    outline: none;
+}
+.loginContainer form button{
+    margin-top: 1rem;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 5vh;
+}
+.loginContainer form button:disabled{
+    cursor:not-allowed;
+}
+.loginContainer .loginToSignup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    border-radius: 20px;
+    padding: 0 1vw;
+    box-sizing: border-box;
+    width: 25vw;
+}
+.loginContainer .loginToSignup h1{
+    font-size: 2rem;
+    margin: 0;
+}
+.loginContainer .loginToSignup .homeLogo{
+    width: 8vw;
+    height: 8vw;
+    border-radius: 50%;
+}
+.loginContainer .loginToSignup .homeLogo img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.loginContainer p{
+    margin: 0;
+    margin-top:10px ;
+}
+.loginContainer .loginToSignup a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}

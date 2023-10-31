@@ -1,0 +1,56 @@
+.fullHomeDetailsContainer{
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-top: 2vh;
+}
+.imageAndName{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.flex {
+    display: flex;
+}
+.homeSlide{
+    overflow:hidden;
+}
+.homeSlide img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: all 1s;
+}
+.imageAndName .homeDetails{
+    margin-left: 3vw;
+}
+.imageAndName .homeDetails h1{
+    color: green;
+    margin: 0;
+}
+.locationAndContact{
+    display: flex;
+    justify-content: space-around;
+}
+.locationAndContact p{
+    display: flex;
+    flex-direction: column;
+}
+.fullHomeDetailsContainer .price{
+    font-size: 2rem;
+    font-weight: bold;
+    color: green;
+}
+.p{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+.contact p{
+    margin: 0;
+}
+.greenColor{
+    color: green;
+}
+.homeDetails h4{
+    width: 30vw;
+}

@@ -1,0 +1,7 @@
+.filterIcon{
+    font-size: 2rem;
+    display: flex;
+    justify-content: end;
+    cursor: pointer;
+    margin: 2vw;
+}

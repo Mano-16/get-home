@@ -1,0 +1,63 @@
+.PendingContainer{
+    box-sizing: border-box;
+    width: 80%;
+    height: max-content;
+    background-color: green;
+    margin: 2px auto;
+    border-radius: 10px;
+    position: relative;
+    
+}
+.PendingContainer .close{
+    position: absolute;
+    right: 2vw;
+    top: 2vh;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.PendingContainer h2{
+    padding: 10px;
+    text-align: center;
+    margin: 2px;
+}
+.PendingContainer .PendingDetail{
+    height: 4rem;
+    width: 95%;
+    background-color: #fff;
+    margin: 10px auto;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.PendingContainer .PendingDetail div{
+    
+    margin: 0;
+    margin-left: 10px;
+}
+.PendingContainer .PendingDetail h3{
+    margin:0;
+}
+.PendingContainer .PendingDetail .contact span{
+    margin-left: 10px;
+}
+.PendingContainer .PendingDetail .contact span a{
+    color: #fff;
+    text-decoration: none;
+}
+.PendingContainer .PendingDetail div span{
+ font-weight: bold;
+}
+.PendingContainer .PendingDetail .icon span{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.PendingContainer .PendingDetail .icon span>*{
+    margin-left: 2vw;
+}
+.PendingContainer h5{
+    text-align: center;
+    background-color: #fff;
+    padding: 10px;
+    margin: 0;
+}

@@ -1,0 +1,58 @@
+.homeFilterContainer{
+    width: 85%;
+    background-color: #fff;
+    height: 40vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.homeFilterContainer .FilterButtonContainer{
+    background-color: #eeeeee;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    height: max-content;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+.homeFilterContainer .FilterButtonContainer button{
+    margin: 5px;
+    padding: 10px 18px;
+    border-radius: 15px;
+    background-color: #eeeeee;
+    border:none;
+    cursor: pointer;
+    min-width: 10vw;
+}
+.homeFilterContainer .FilterButtonContainer button.active{
+    background-color: #fff;
+}
+.homeFilterContainer .homeFormContainer{
+    width: 95%;
+    height: 25vh;
+    position: relative;
+    margin: 10px;
+}
+.homeFilterContainer .homeFormContainer form .formInput{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.homeFilterContainer .homeFormContainer form .formInput div{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.homeFormContainer .formInput input{
+    padding: 5px;
+    border-radius: 5px;
+    border-color: #eeeeee;
+}
+.homeFormContainer .formInput input::placeholder{
+    opacity: 0.8;
+}
+.homeFormContainer form button span{
+    margin-top: 5px;
+    margin-right: 2px;
+}

@@ -1,0 +1,34 @@
+.backDrop{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100vh;
+    z-index: 20;
+    background-color: rgba(0,0,0,0.75);
+}
+.Modal{
+    position: fixed;
+    top: 10vh;
+    left: 5%;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+    z-index: 30;
+    animation: slide-down 200ms ease-out forwards;
+}
+
+
+@keyframes slide-down{
+    from{
+        opacity: 0;
+        transform:  translateY(-3rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

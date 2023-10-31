@@ -1,0 +1,7 @@
+.extraThingsContainer>*{
+    width: 3rem;
+}
+.extraThingsContainer{
+    display: flex;
+    flex-direction: column;
+}
