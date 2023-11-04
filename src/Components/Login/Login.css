@@ -1,6 +1,6 @@
 .loginContainer{
     width: 50vw;
-    height: 60vh;
+    height: 68vh;
     background-color: #eeeeee;
     border-radius: 20px;
     display: flex;
@@ -13,7 +13,7 @@
     top: 0;
     left: 50%;
     transform: translate(-50%,0);
-    width: 15vw;
+    width: max-content;
     height: max-content;
     background-color: red;
     border-bottom-left-radius: 5px;
@@ -122,4 +122,14 @@
     color: #fff;
     font-size: 0.8rem;
     margin-left: 10px;
+}
+small{
+    color: red;
+    opacity: 0.8;
+}
+.LoginForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 60%;
 }

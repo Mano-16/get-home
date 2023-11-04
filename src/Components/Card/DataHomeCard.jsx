@@ -21,7 +21,6 @@ const HomeCardData = (props) => {
 
   const CardDetails =  isFiltered===2 ? FilterSubHomeDetails: (isFiltered==1 ? FilterHomeDetails: HomeDetails);
   const pageCardDetails = CardDetails && CardDetails.slice(firstPostIndex, lastPostIndex);
-  console.log(pageCardDetails)
   return (
     <div className="TotalCardContainer">
       {FilterHomeDetails.length === 0 && isFiltered===1 && (

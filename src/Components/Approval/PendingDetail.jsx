@@ -5,6 +5,7 @@ import { RemoveData, sendData } from "../../lib/api";
 import Button from "../ReuseComponents/Button";
 import { homeSliceActions } from "../../store/homeDataRedux";
 import { useDispatch } from "react-redux";
+import { FaStar} from 'react-icons/fa6'
 
 export const PendingDetail = (props) => {
     const dispatch = useDispatch()
@@ -53,7 +54,7 @@ export const PendingDetail = (props) => {
       </div>
       <div className="contact">
         <span><Button p={"6px"} bgcolor={"green"}><a href={`tel:${props.detail.contactNumber}`}>Contact Owner</a></Button></span>
-        <span>{props.detail.Rating}</span>
+        <span className="star"> <FaStar/> {props.detail.Rating}</span>
       </div>
       {!props.value && <div className="icon">
         <span onClick={ApprovalHandler}><MdOutlineDone/></span>

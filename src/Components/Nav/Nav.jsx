@@ -14,7 +14,6 @@ const Nav = (props) => {
 
   const showLoginHandler=()=>{
     dispatch(authSliceActions.showloginpage())
-    navigate("/auth")
   } 
   const showOwnerFormHandler =()=>{
     props.onShow()

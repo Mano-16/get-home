@@ -15,6 +15,9 @@ const ExtraThings = (props) => {
           onGet={props.onGet}
           data={props.data}
           key={i}
+          onChange={props.onChange}
+          errors={props.errors}
+          touched={props.touched}
         />
       ))}
     </div>

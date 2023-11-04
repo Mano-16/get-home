@@ -29,11 +29,11 @@ const FullHomeDetails = () => {
         const data = await response.json();
         const files = [data.HomeImage];
         setHomeData(data);
-        if(data.files){
+        if(data.OtherImages){
             setStatus({
             isSubmitting: false,
             didSubmit: true,
-            totalFiles: files.concat(data.files),
+            totalFiles: files.concat(data.OtherImages),
           })}
           else{
             setStatus({
@@ -57,7 +57,7 @@ const FullHomeDetails = () => {
           <div className="imageAndName">
             <div className="homeSlide">
               <ImageSlider slideImages={status.totalFiles} />
-              <p>{`Age of Building: ${homeData.AgeOfHome}`}</p>
+              <p>{`Age of Building: ${homeData.AgeOfRentalPlace}`}</p>
               <p>{homeData.floorNumber && `Floor Number:${homeData.floorNumber}`}</p>
               <p>{`Address: ${homeData.Address}-${homeData.Pincode}`}</p>
               <div className="contact">
@@ -85,7 +85,7 @@ const FullHomeDetails = () => {
               </div>
               <div className="p">
                 <div>
-                  <p>{`Preferred tenant: ${homeData.relationship}`}</p>
+                  <p>{`Preferred tenant: ${homeData.Relationship}`}</p>
                   <p>{`Location:${homeData.Location} `}</p>
                   <p>
                     Rating: <span>{`${homeData.Rating} `}</span>
@@ -93,30 +93,32 @@ const FullHomeDetails = () => {
                 </div>
                 <p>
                   Rent:<span className="price">{`${homeData.Price}`}</span>
-                  {`/${homeData.PricePerTime}`}
+                  {`/${homeData.Per}`}
                 </p>
               </div>
               <p className="">Other Details:</p>
               <ul>
-                {homeData.furniture && <li>{homeData.furniture}</li>}
+                {homeData.Furnished && <li>{homeData.Furnished}</li>}
                 {homeData.Wifi && <li>Wifi facility available</li>}
                 {homeData.Maintenance && <li>Maintenance included</li>}
-                {homeData.Bike_Car_Parking && (
+                {homeData.BikeAndCarParking && (
                   <li>Car & Bike Parking available</li>
                 )}
-                {homeData.Water_Facility && <li>Water facility available</li>}
-                {homeData.UPS_service && <li>UPS Service available</li>}
-                {homeData.Swimming_Pool && <li>Swimming pool</li>}
-                {homeData.lift && <li>Swimming pool</li>}
+                {homeData.WaterFacility && <li>Water facility available</li>}
+                {homeData.UPS && <li>UPS Service available</li>}
+                {homeData.SwimmingPool && <li>Swimming pool</li>}
+                {homeData.lift && <li>Lift Facility available</li>}
                 {
                   <li>{`Gate Security: ${
-                    homeData.Gate_Security ? "Yes" : "No"
+                    homeData.Security ? "Yes" : "No"
                   }`}</li>
                 }
               </ul>
             </div>
           </div>
-          <div className="locationAndContact"></div>
+          <div className="locationAndContact">
+            {`Comments:${homeData.Comments}`}
+          </div>
         </div>
       )}
     </div>

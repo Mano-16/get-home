@@ -2,7 +2,7 @@ import "./HomeCard.css";
 import { AiOutlineStar } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 import { SlLocationPin } from "react-icons/sl";
-import { BiCalendarAlt } from "react-icons/bi";
+import { MdFamilyRestroom } from "react-icons/md";
 import { FaHeart } from "react-icons/fa6";
 import { LiaTimesSolid } from "react-icons/lia";
 import Button from "../ReuseComponents/Button";
@@ -32,6 +32,7 @@ const HomeCard = (props) => {
     PricePerTime,
     contactNumber,
     key,
+    Relationship
   } = props.HomeDetails;
   const cardRemoveHanlder = () => {
     props.onShow(key)
@@ -89,7 +90,7 @@ const HomeCard = (props) => {
           <SlLocationPin /> {Location}
         </span>
         <span>
-          <BiCalendarAlt /> {Timing}
+          <MdFamilyRestroom /> {Relationship}
         </span>
       </div>
       <div className="cardPrice">

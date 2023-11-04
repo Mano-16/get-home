@@ -1,0 +1,296 @@
+ <div
+      className="loginContainer"
+      style={{ flexDirection: `${isLogin ? "row-reverse" : "row"}` }}
+    >
+      <form>
+        <h2>{isLogin ? "Welcome Back!" : "Hey, Come here"}</h2>
+        <p>Live or let alive!</p>
+        {!isLogin && (
+          <div>
+            <label className="textLabel">Name</label>
+            <input type="text" placeholder="Name" required  value={loginInfo.nameOrRadio} onChange={(e)=>setLoginInfo({...loginInfo,nameOrRadio:e.target.value})}/>
+          </div>
+        )}
+        <div>
+          <label className="textLabel">Email</label>
+          <input type="email" placeholder="findyourhouse@gmail.com" required  value={loginInfo.emailID} onChange={(e)=>setLoginInfo({...loginInfo,emailID:e.target.value})} />
+        </div>
+        <div>
+          <label className="textLabel">Password</label>
+          <input type="password" placeholder="**********" required value={loginInfo.password} onChange={(e)=>{setLoginInfo({...loginInfo,password:e.target.value})}}/>
+        </div>
+        {isLogin && (
+          <div>
+            <label>Admin</label>
+            <input id="admin" name="user-permission" type="radio" value = "Admin" required onChange={(e)=>{setLoginInfo({...loginInfo,nameOrRadio:e.target.value})}}/>
+            <label className="radioLabel">User</label>
+            <input id="user" name="user-permission" type="radio" value = "User" required onChange={(e)=>{setLoginInfo({...loginInfo,nameOrRadio:e.target.value})}} />
+          </div>
+        )}
+        <button disabled={buttonDisabled} onClick={loginHandler}>{isLogin ? "Log In" : "Sign up"}</button>
+        <span onClick={hideLoginPageHandler}>
+          <LiaTimesSolid />
+        </span>
+      </form>
+      <div className="loginToSignup">
+        <h1>Get Your Rental Place!</h1>
+        <div className="homeLogo">
+          <img src={Home} alt="HomeLogo" />
+        </div>
+        <p>
+          {isLogin ? "Don't have account?" : "Already have account?"}
+          <Link
+            onClick={() => setIsLogin((prevState) => setIsLogin(!prevState))}
+          >
+            {isLogin ? "Create an account" : "Login in here"}
+          </Link>
+        </p>
+      </div>
+      {Error.showError && <div style={{cursor:"pointer"}} className={Error.showError?"loginError active" : "loginError"}>{Error.errorMessage} <LiaTimesSolid onClick={()=>setError({showError:false,errorMessage:""})}/></div>}
+    </div>
+  );
+};
+
+export default Login;
+
+
+
+
+
+
+
+<form className="addHomeForm" onSubmit={AddHomeHandler}>
+      <h1>Get your customer easily!</h1>
+      <span onClick={onShowHandler}>
+        <LiaTimesSolid />
+      </span>
+      <div className="addHomeContainer">
+        <Select
+          placeholder="Home Type"
+          className="select"
+          onChange={(e) =>
+            setAddHomeData({ ...AddHomeData, HomeType: e.value })
+          }
+          options={HomeType}
+          required
+        />
+        <Select
+          placeholder="BHKs"
+          className="select"
+          onChange={(e) => setAddHomeData({ ...AddHomeData, BHK: e.value })}
+          options={BHKs}
+          required
+        />
+        <Select
+          placeholder="Bathroom"
+          className="select"
+          onChange={(e) =>
+            setAddHomeData({ ...AddHomeData, Bathroom: e.value })
+          }
+          options={BathroomCount}
+          required
+        />
+        <div className="homeInputFields">
+          <div>
+            <label className="labelBlock" htmlFor="Home Name">
+              Home Name
+            </label>
+            <input
+              type="text"
+              placeholder="Home Name"
+              id="Home Name"
+              onChange={(e) =>
+                setAddHomeData({ ...AddHomeData, HomeName: e.target.value })
+              }
+              required
+              autoComplete="off"
+            />
+          </div>
+          <div>
+            <label className="labelBlock" htmlFor="Owner Name">
+              Owner Name
+            </label>
+            <input
+              type="text"
+              placeholder="Owner Name"
+              id="Owner Name"
+              onChange={(e) =>
+                setAddHomeData({ ...AddHomeData, OwnerName: e.target.value })
+              }
+              required
+              autoComplete="off"
+            />
+          </div>
+          <div>
+            <label className="labelBlock" htmlFor="Your Email">
+              Your Email
+            </label>
+            <input
+              type="email"
+              placeholder="Your Email"
+              id="Your Email"
+              onChange={(e) =>
+                setAddHomeData({ ...AddHomeData, OwnerEmail: e.target.value })
+              }
+              required
+              autoComplete="off"
+            />
+          </div>
+          <div>
+            <label className="labelBlock" htmlFor="Location">
+              Location
+            </label>
+            <input
+              type="text"
+              placeholder="Location"
+              id="Location"
+              onChange={(e) =>
+                setAddHomeData({ ...AddHomeData, Location: e.target.value })
+              }
+              required
+              autoComplete="off"
+            />
+          </div>
+          <div>
+            <label className="labelBlock" htmlFor="Contact Number">
+              Contact Number
+            </label>
+            <input
+              type="text"
+              placeholder="Contact Number"
+              id="Contact Number"
+              onChange={(e) =>
+                setAddHomeData({
+                  ...AddHomeData,
+                  ContactNumber: e.target.value,
+                })
+              }
+              required
+              autoComplete="off"
+            />
+          </div>
+        </div>
+        <div className="homeInputFields2">
+          <div>
+            <label className="labelBlock" htmlFor="Price $">
+              Price $
+            </label>
+            <input
+              type="number"
+              placeholder="Price $"
+              id="Price $"
+              onChange={(e) =>
+                setAddHomeData({ ...AddHomeData, Price: e.target.value })
+              }
+              required
+              autoComplete="off"
+              min={0}
+            />
+            <Select
+              className="select"
+              placeholder="Per"
+              options={per}
+              onChange={(e) =>
+                setAddHomeData({ ...AddHomeData, PricePerTime: e.value })
+              }
+            />
+            <label className="labelBlock" htmlFor="Advance $">
+              Advance $
+            </label>
+            <input
+              type="number"
+              placeholder="Advance $"
+              id="Advance $"
+              onChange={(e) =>
+                setAddHomeData({ ...AddHomeData, Advance: e.target.value })
+              }
+              required
+              autoComplete="off"
+              min={0}
+            />
+          </div>
+
+          <textarea
+            rows={3}
+            cols="2"
+            placeholder="Address"
+            onChange={(e) =>
+              setAddHomeData({ ...AddHomeData, Address: e.target.value })
+            }
+            
+          />
+          <input type="number" placeholder="Pincode" onChange={(e)=>setAddHomeData({...AddHomeData,Pincode:e.target.value})} />
+          {AddHomeData.HomeType === "Apartment" && (
+            <div>
+              <input type="number" placeholder="Floor number" onChange={()=>setAddHomeData({...AddHomeData,FloorNumber:e.target.value})} />
+              <CardInput
+                type={"checkbox"}
+                label={"Lift"}
+                name={"Lift"}
+                class={"labelBlock"}
+                onGet={setAddHomeData}
+                data={AddHomeData}
+                key={"as"}
+              />
+            </div>
+          )}
+        </div>
+        <div className="extrathings">
+          <ExtraThings
+            checkBoxDetails={checkBoxDetails}
+            onGet={setAddHomeData}
+            data={AddHomeData}
+          />
+        </div>
+        <div className="file">
+          <div>
+            <label className="labelBlock" htmlFor="Upload your Home's photo">
+              Upload your Home's image:
+            </label>
+            <input
+              onChange={onFileCheckHandler}
+              type="file"
+              id="Upload your Home's photo:"
+              required
+              autoComplete="off"
+            />
+          </div>
+          <div>
+            <label className="labelBlock" htmlFor="Upload your Home's photo">
+              Upload your Room & facilities images:
+            </label>
+            <input
+              onChange={onFileCheckHandler}
+              type="file"
+              id="Room"
+              required
+              multiple
+              autoComplete="off"
+            />
+          </div>
+          <textarea
+            placeholder="Comments"
+            onChange={(e) =>
+              setAddHomeData({ ...AddHomeData, Comments: e.target.value })
+            }
+          />
+          <input
+            placeholder="Age of Rental place"
+            type="number"
+            onChange={(e) => {
+              setAddHomeData({ ...AddHomeData, AgeOfHome: e.target.value });
+            }}
+          />
+        </div>
+        <div className="addHomeButton">
+          <button  className="submit btn" onClick={AddHomeHandler}>
+            {" "}
+            Submit
+          </button>
+          <p>You can't edit your home details you submitted.</p>
+        </div>
+        {/* <Button className="submit btn" d={"block"}>Submit</Button> */}
+      </div>
+    </form>
+  );
+};

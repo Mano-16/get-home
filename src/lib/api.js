@@ -43,11 +43,10 @@ export const getHomeData = async (url,method) => {
         HomeName:data[key].HomeName,
         Location:data[key].Location,
         Price:data[key].Price,
-        PricePerTime:data[key].PricePerTime,
+        PricePerTime:data[key].Per,
         Rating:data[key].Rating,
-        Timing:data[key].Timing,
         HomeType:data[key].HomeType,
-        Relationship:data[key].relationship,
+        Relationship:data[key].Relationship,
         BHK:data[key].BHK
       })
     }

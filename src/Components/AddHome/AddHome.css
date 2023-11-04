@@ -1,12 +1,13 @@
 .addHomeForm{
     background-color: #eeeeee;
-    width: 80%;
-    height: 73vh;
+    width: 85%;
+    height: 75vh;
     border-radius: 10px;
     box-sizing: border-box;
     padding: 1.5vw;
     position: relative;
     overflow: hidden;
+    overflow-y: scroll;
 }
 .addHomeForm h1{
     margin: 0;
@@ -21,14 +22,14 @@
 .addHomeContainer{
     display: grid;
     grid-template-columns: 25% 25% 25% 24%;
-    grid-template-rows: 15% 60% 15%;
+    grid-template-rows: 20% 60% 15%;
     column-gap: 10px;
     height: 90%;
     width: 98%;
 }
 .select{
     width: 12vw;
-    margin: 1vw 1vw 1vw 0;
+    margin: 1vw 1vw 0 0;
     display: inline-block;
 }
 .submit{
@@ -70,6 +71,10 @@
     margin: 0.5rem 0  ;
     
 }
+.HomeType{
+    grid-column: 1;
+    grid-row: 1;
+}
 .homeInputFields2{
     grid-column: 2;
     grid-row: span 2;
@@ -88,6 +93,9 @@
 .addHomeButton{
     font-size: 0.6rem;
 }
+.addHomeButton p{
+    margin: 0;
+}
 .submit{
     border-radius: 10px;
     background-color: green;
@@ -101,4 +109,7 @@
 .file{
     grid-column: 4;
     grid-row: 1/2;
+}
+small {
+    display: block;
 }

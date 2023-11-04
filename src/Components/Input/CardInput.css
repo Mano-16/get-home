@@ -14,3 +14,6 @@ input:focus{
 .inputTag label{
     white-space: nowrap;
 }
+small{
+    display: block;
+}
