@@ -91,7 +91,7 @@ const Login = (props) => {
         const data = await response.json();
         if (isLogin) {
           if (
-            data.localId === "99jSfUGivEQpvczUwua2gmvVM9S2" &&
+            data.localId === "q3H7YUQO5MSccngRmPMobeT3q473" &&
             nameOrRadio === "Admin"
           ) {
             dispatch(authSliceActions.AdminLoggedIn());
@@ -101,7 +101,7 @@ const Login = (props) => {
             dispatch(authSliceActions.hideloginpage());
             navigate("/");
           } else if (
-            data.localId !== "99jSfUGivEQpvczUwua2gmvVM9S2" &&
+            data.localId !== "q3H7YUQO5MSccngRmPMobeT3q473" &&
             nameOrRadio === "User"
           ) {
             dispatch(authSliceActions.LoggedIn());

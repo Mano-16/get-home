@@ -11,7 +11,6 @@ const Nav = (props) => {
   const pendingData = useSelector(state=>state.homeMain.ApprovalPendingRedux)
   const favouriteData = useSelector(state=>state.homeMain.favouritesRedux)
   
-
   const showLoginHandler=()=>{
     dispatch(authSliceActions.showloginpage())
   } 

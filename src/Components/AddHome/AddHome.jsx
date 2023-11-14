@@ -393,6 +393,7 @@ const AddHome = (props) => {
               name="Address"
               value={values.Address}
               onChange={handleChange}
+              onBlur={handleBlur}
             />
             {errors.Address && touched.Address && <small>{errors.Address}</small>}
           </div>
@@ -467,6 +468,7 @@ const AddHome = (props) => {
               onChange={handleChange}
               name="Comments"
               value={values.Comments}
+              onBlur={handleBlur}
             />
             {errors.Comments && touched.Comments && <small>{errors.Comments}</small>}
           </div>
@@ -477,6 +479,7 @@ const AddHome = (props) => {
               name="AgeOfRentalPlace"
               onChange={handleChange}
               value={values.AgeOfRentalPlace}
+              onBlur={handleBlur}
             />
             {errors.AgeOfRentalPlace && touched.AgeOfRentalPlace && 
               <small>{errors.AgeOfRentalPlace}</small>
@@ -486,9 +489,10 @@ const AddHome = (props) => {
         <div className="addHomeButton">
           <button className="submit btn" onClick={handleSubmit}>
             {" "}
-            Submit
+            Submit for Approval
           </button>
-          <p>You can't edit your home details you submitted.</p>
+          <p>You can't edit your home details once you submitted.</p>
+          <p>Once Admin Approved your home, that will displayed in dashboard.</p>
         </div>
         {/* <Button className="submit btn" d={"block"}>Submit</Button> */}
       </div>

@@ -43,7 +43,7 @@ const FilterMain = (props) => {
       x=x.filter((home)=>home.BHK===filterData.BHK)
     }
     if(filterData.Relationship){
-      x=x.filter((home)=>home.Relationship===filterData.Relationship)
+      if(filterData.Relationship!=="Bachelor/Family")x=x.filter((home)=>home.Relationship===filterData.Relationship)
     }
     if(filterData.Rating){
       const y = filterData.Rating-0.5
@@ -99,16 +99,11 @@ const FilterMain = (props) => {
             <Select options={RatingOptions} placeholder="Rating" style={{width:"600px"}} onChange={(e)=>setFilterData({...filterData,Rating:e.value})}/>
           </div>
           <div className="f">
-            <label htmlFor="RelationShip">Relationship</label>
-            <Select
-              options={[
-                { value: "Bachelor", label: "Bachelor" },
-                { value: "Family", label: "Family" },
-                { value: "Bachelor/Family", label: "Family/Bachelor" },
-              ]}
-              placeholder="Bachelor/Family"
-              onChange={(e)=>setFilterData({...filterData,Relationship:e.value})}
-            />
+          <Button mt={"10px"} onFunc={onFliterTrigger}>Filter</Button>
+          
+          {/* <button className="signup btn" onClick={ResetFilterHandler}>
+          Reset
+        </button> */}
           </div>
         </div>
         <div className="filter">
@@ -125,12 +120,18 @@ const FilterMain = (props) => {
         </div>
         <div className="filter">
         <div className="f">
-          <Button mt={"10px"} onFunc={onFliterTrigger}>Filter</Button>
-          
-          {/* <button className="signup btn" onClick={ResetFilterHandler}>
-          Reset
-        </button> */}
+            <label htmlFor="RelationShip">Relationship</label>
+            <Select
+              options={[
+                { value: "Bachelor", label: "Bachelor" },
+                { value: "Family", label: "Family" },
+                { value: "Bachelor/Family", label: "Family/Bachelor" },
+              ]}
+              placeholder="Bachelor/Family"
+              onChange={(e)=>setFilterData({...filterData,Relationship:e.value})}
+            />
           </div>
+        
           <div className="f">
           <Button mt={"5px"} p="10px 25px" color="#000" bgcolor={"#fff"} onFunc={ResetFilterHandler}>Reset</Button>
           </div>

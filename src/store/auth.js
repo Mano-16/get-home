@@ -2,7 +2,7 @@ import {createSlice} from "@reduxjs/toolkit";
 const ID = localStorage.getItem("ID")
 const authSlice = createSlice({
     name:"auth",
-    initialState:{isloginShow: false,isAuthenticated: ID ? true : false,isAdmin: ID==="99jSfUGivEQpvczUwua2gmvVM9S2" ? true:false},
+    initialState:{isloginShow: false,isAuthenticated: ID ? true : false,isAdmin: ID==="q3H7YUQO5MSccngRmPMobeT3q473" ? true:false},
     reducers:{
         showloginpage(state){
             state.isloginShow=true;

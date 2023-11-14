@@ -78,9 +78,9 @@ const FullHomeDetails = () => {
                   homeData.HomeType !== "Resort" ? "1 Kitchen" : ""
                 } and good view of balcony.`}</h4>
                 <div>
-                  <p>
+                  {homeData.advance && <p>
                     Advance: <span className="price">{homeData.Advance}</span>
-                  </p>
+                  </p>}
                 </div>
               </div>
               <div className="p">
